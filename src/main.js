@@ -1,6 +1,6 @@
 import './styles/style.css';
 import { vertexShader, fragmentShader } from "./shaders.js";
-
+console.log('script loaded');
 const config = {
   logoPath: "/logo.png",
   logoSize: 1250,
