@@ -64,6 +64,7 @@ function compileShader(type, source) {
 
 function loadLogo() {
   const image = new Image();
+   image.crossOrigin = 'anonymous';
   image.onload = function () {
     const tempCanvas = document.createElement("canvas");
     const ctx = tempCanvas.getContext("2d");
