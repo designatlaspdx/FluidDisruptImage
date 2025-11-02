@@ -1,26 +1,41 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-	server: {
-		host: 'localhost', // Ensures you can access it on your local network
-		port: 3000,
-		cors: true, // Allows cross-origin requests (useful when embedding on other sites)
-		hmr: {
-			host: 'localhost',
-			protocol: 'ws',
-		},
-	},
-	build: {
-		minify: true, // Minifies the output for better performance
-		manifest: true,
-		rollupOptions: {
-			input: './src/main.js', // Your main entry file
-			output: {
-				format: 'umd', // UMD format maximizes compatibility when loaded via a <script> tag
-				entryFileNames: 'main.js', // Force the output filename to be 'main.js'
-				esModule: false, // Avoids adding ES module markers since we’re using UMD
-				compact: true, // Produces a compact, minimized output bundle
-			},
-		},
-	},
+  server: {
+    host: 'localhost',
+    port: 3000,
+    cors: true,
+  },
+    build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    minify: true,
+  },
+//   build: {
+//     outDir: 'dist',
+//     emptyOutDir: true,
+//     minify: true,
+//     rollupOptions: {
+//       // Normal HTML build entry
+//       input: './index.html',
+//       // Extra output for a drop-in UMD version
+//       output: [
+//         // default output for HTML build
+//         {
+//           dir: 'dist',
+//           entryFileNames: 'assets/[name]-[hash].js',
+//           format: 'es',
+//         },
+//         // second output: standalone UMD bundle
+//         {
+//           file: 'dist/main.js',
+//           format: 'umd',
+//           name: 'FluidDisrupt', // global name when loaded via <script>
+//           entryFileNames: 'main.js',
+//           esModule: false,
+//           compact: true,
+//         },
+//       ],
+//     },
+//   },
 })
