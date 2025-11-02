@@ -1,8 +1,12 @@
 import './styles/style.css';
 import { vertexShader, fragmentShader } from "./shaders.js";
 console.log('script loaded');
+
+const BASE =
+  window.FLUID_BASE_URL || 'https://fluidimagedisrupt.netlify.app'
+
 const config = {
-  logoPath: "/logo.png",
+  logoPath: `${BASE}/logo.png`,
   logoSize: 1250,
   logoColor: "#404040",
   canvasBg: "#141414",
