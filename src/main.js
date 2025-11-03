@@ -6,7 +6,7 @@ const BASE =
   window.FLUID_BASE_URL || 'https://fluidimagedisrupt.netlify.app'
 
 const config = {
-  logoPath: `${BASE}/logo.png`,
+  logoPath: `${BASE}/logo2.png`,
   logoSize: 1250,
   logoColor: "#404040",
   canvasBg: "#141414",
